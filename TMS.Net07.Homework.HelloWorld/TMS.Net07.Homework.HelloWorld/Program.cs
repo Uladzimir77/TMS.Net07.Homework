@@ -13,9 +13,16 @@ namespace TMS.Net07.Homework.HelloWorld
             int number;
 
             Console.Write("Введите целое число: ");
-            number = int.Parse(Console.ReadLine());
+            string str = Console.ReadLine();
 
-            Console.WriteLine("Ваше число: " + number);
+            if (int.TryParse(str, out number))
+            {
+                Console.WriteLine("Ваше число: " + number);
+            }
+            else
+            {
+                Console.WriteLine("\'" + str + "\'" + "- не является числом");
+            }
         }
     }
 }
