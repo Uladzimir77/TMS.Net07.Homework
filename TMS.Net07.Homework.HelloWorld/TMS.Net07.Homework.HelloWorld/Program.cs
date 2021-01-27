@@ -11,17 +11,32 @@ namespace TMS.Net07.Homework.HelloWorld
         static void Main(string[] args)
         {
             int number;
+            bool i = true;
 
-            Console.Write("Введите целое число: ");
-            string str = Console.ReadLine();
+            while (i)
+            {
+                Console.Write("\nВведите целое число: ");
+                string str = Console.ReadLine();
 
-            if (int.TryParse(str, out number))
-            {
-                Console.WriteLine("Ваше число: " + number);
-            }
-            else
-            {
-                Console.WriteLine("\'" + str + "\'" + "- не является числом");
+                if (int.TryParse(str, out number))
+                {
+                    Console.WriteLine("Ваше число: " + number);
+
+                }
+                else
+                {
+                    Console.WriteLine("\'" + str + "\'" + "- не является числом");
+
+                }
+
+                Console.WriteLine("\nЕсли вы хотите завершить работу приложения нажмите цифру (0)");
+                str = Console.ReadLine();
+
+                if (int.TryParse(str, out number))
+                {
+                    if (number == 0)
+                        i = false;
+                }
             }
         }
     }
