@@ -8,36 +8,55 @@ namespace TMS.Net07.Homework.HelloWorld
 {
     class Program
     {
+        enum DaysOfWeek
+        {
+            Понедельник,
+            Вторник,
+            Среда,
+            Четверг,
+            Пятница,
+            Суббота,
+            Воскресенье
+        }
         static void Main(string[] args)
         {
-            int number;
-            bool i = true;
+            string day;
+            string exitProg = "exit";
 
-            while (i)
+            Console.WriteLine("Введите день недели, на англ. языке.");
+            Console.WriteLine("Пример ввода - Monday, для выхода из программы введте - exit.");
+
+            do
             {
-                Console.Write("\nВведите целое число: ");
-                string str = Console.ReadLine();
+                Console.Write("\nENG: ");
+                day = Console.ReadLine();
 
-                if (int.TryParse(str, out number))
+                Console.Write("RUS: ");
+
+                switch (day)
                 {
-                    Console.WriteLine("Ваше число: " + number);
+                    case "Monday":
+                        Console.WriteLine($"{DaysOfWeek.Понедельник}"); break;
+                    case "Tuesday":
+                        Console.WriteLine($"{DaysOfWeek.Вторник}"); break;
+                    case "Wednesday":
+                        Console.WriteLine($"{DaysOfWeek.Среда}"); break;
+                    case "Thursday":
+                        Console.WriteLine($"{DaysOfWeek.Четверг}"); break;
+                    case "Friday":
+                        Console.WriteLine($"{DaysOfWeek.Пятница}"); break;
+                    case "Saturday":
+                        Console.WriteLine($"{DaysOfWeek.Суббота}"); break;
+                    case "Sunday":
+                        Console.WriteLine($"{DaysOfWeek.Воскресенье}"); break;
+                    case "exit":
+                        return;
+                    default:
+                        Console.WriteLine("Некорректный ввод данных!"); break;
 
                 }
-                else
-                {
-                    Console.WriteLine("\'" + str + "\'" + "- не является числом");
-
-                }
-
-                Console.WriteLine("\nЕсли вы хотите завершить работу приложения нажмите цифру (0)");
-                str = Console.ReadLine();
-
-                if (int.TryParse(str, out number))
-                {
-                    if (number == 0)
-                        i = false;
-                }
-            }
+            } while (day != exitProg);
+        
         }
     }
 }
