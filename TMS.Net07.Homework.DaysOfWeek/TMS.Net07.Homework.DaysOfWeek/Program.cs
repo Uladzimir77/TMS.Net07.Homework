@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TMS.Net07.Homework.HelloWorld
+namespace TMS.Net07.Homework.DaysOfWeek
 {
     class Program
     {
@@ -56,7 +56,6 @@ namespace TMS.Net07.Homework.HelloWorld
 
                 }
             } while (day != exitProg);
-        
         }
     }
 }
