@@ -8,63 +8,39 @@ namespace TMS.Net07.Homework.DaysOfWeek
 {
     class Program
     {
-        enum DaysOfWeek
+        static int TryParse(string dig)
         {
-            Понедельник,
-            Вторник,
-            Среда,
-            Четверг,
-            Пятница,
-            Суббота,
-            Воскресенье
-        }
+            int temp;
 
+            if (!int.TryParse(dig, out temp))
+            {
+                Console.WriteLine("Некорректный ввод данных!");
+            }
+
+            return temp;
+        }
         static void Main(string[] args)
         {
-            string day;
-            const string exitProg = "exit";
+            string date, day, month, year, editDate;
+            int tempDay, tempMonth, tempYear;
+            string[] arrayStr;
 
-            Console.WriteLine("Введите день недели, на англ. языке.");
-            Console.WriteLine("Пример ввода - Monday, для выхода из программы введте - exit.");
+            Console.Write("Введите дату (день.месяц.год): ");
+            date = Console.ReadLine();
 
-            do
-            {
-                Console.Write("\nENG: ");
-                day = Console.ReadLine();
+            editDate = date.Replace(".", " ");
+            arrayStr = editDate.Split(new char[] { ' ' });
 
-                Console.Write("RUS: ");
+            day = arrayStr[0];
+            month = arrayStr[1];
+            year = arrayStr[2];
 
-                switch (day)
-                {
-                    case "Monday":
-                        Console.WriteLine(DaysOfWeek.Понедельник);
-                        break;
-                    case "Tuesday":
-                        Console.WriteLine(DaysOfWeek.Вторник);
-                        break;
-                    case "Wednesday":
-                        Console.WriteLine(DaysOfWeek.Среда);
-                        break;
-                    case "Thursday":
-                        Console.WriteLine(DaysOfWeek.Четверг);
-                        break;
-                    case "Friday":
-                        Console.WriteLine(DaysOfWeek.Пятница);
-                        break;
-                    case "Saturday":
-                        Console.WriteLine(DaysOfWeek.Суббота);
-                        break;
-                    case "Sunday":
-                        Console.WriteLine(DaysOfWeek.Воскресенье);
-                        break;
-                    case "exit":
-                        return;
-                    default:
-                        Console.WriteLine("Некорректный ввод данных!");
-                        break;
+            tempDay = TryParse(day);
+            tempMonth = TryParse(month);
+            tempYear = TryParse(year);
 
-                }
-            } while (day != exitProg);
+            DateTime dateValue = new DateTime(tempYear, tempMonth, tempDay);
+            Console.WriteLine("\nСогласно введенным данным, день недели: " + dateValue.ToString("dddd") + "\n");
         }
     }
 }
