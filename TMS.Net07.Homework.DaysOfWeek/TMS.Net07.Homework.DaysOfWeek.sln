@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS.Net07.Homework.DaysOfWeek", "TMS.Net07.Homework.DaysOfWeek.csproj", "{DAE6513D-CE32-4BD9-B95C-FA1EA03EC6BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAE6513D-CE32-4BD9-B95C-FA1EA03EC6BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE6513D-CE32-4BD9-B95C-FA1EA03EC6BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE6513D-CE32-4BD9-B95C-FA1EA03EC6BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE6513D-CE32-4BD9-B95C-FA1EA03EC6BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F73CB9B0-B517-4E38-8CEA-25FD87DCB46A}
+	EndGlobalSection
+EndGlobal
