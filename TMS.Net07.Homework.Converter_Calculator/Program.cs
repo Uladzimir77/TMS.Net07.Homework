@@ -7,122 +7,143 @@ using System.Threading.Tasks;
 namespace TMS.Net07.Homework.Converter_Calculator
 {
     class Program
-    {
-        static void Outcome(double sum, double currentByn, string targetMoney)
-        {
-            double outcome;
+    {  
+       static bool ExitProg( string exitMessage) //запрос на окончание работы прог-мы
+       {
+            char end;
 
-            outcome = sum * currentByn;
+            Console.WriteLine(exitMessage);
+            end = char.Parse(Console.ReadLine().ToLower());
 
-            Console.WriteLine("Сумма в {0}: {1:0.0000}", targetMoney, outcome);
-        }
+            if(end == 'y')
+            {
+                return true;
+            }
+
+            return false;
+       }
         static void Main(string[] args)
         {
-            double sum, outcome;
-            double currentUsd = 0;
-            double currentEuro = 0;
-            double currentRub = 0;
-            double currentByn = 0;
-            string sourceMoney, targetMoney;
-            const string moneyUsd = "USD";
-            const string moneyEuro = "EURO";
-            const string moneyByn = "BYN";
-            const string moneyRub = "RUB";
+            double digit1;
+            double digit2;
+            double outcome = 0;
+            char calcSymbol;
+            const string errorMessage = "Некорректный ввод данных!";
+            const string exitMessage = "Вы хотите прдолжить? Y - да, любая другая клавиша - нет";
+            const string errorDivision = "На ноль делить нельзя!";
+            bool exit = true;
 
-            Console.Write("Введите вашу валюту (USD,EURO,BYN,RUB): ");
-            sourceMoney = Console.ReadLine();
+            while (exit) 
+            {
+                Console.Write("Введите первое число: ");
 
-            Console.Write("Введите предпочитаемую валюту (USD,EURO,BYN,RUB): ");
-            targetMoney = Console.ReadLine();
+                if(!double.TryParse(Console.ReadLine(), out digit1)) //проверка парсинга в double 1-го значения
+                {
+                    Console.WriteLine(errorMessage);
 
-            Console.Write("Введите сумму: ");
+                    if (exit = ExitProg(exitMessage)) 
+                    {
+                        Console.Clear();
+                        continue;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
 
-            if (!double.TryParse(Console.ReadLine(), out sum))
-            {
-                Console.WriteLine("Некорректный ввод данных");
-            }
+                Console.Write("Введите второе число: "); 
 
-            if(sourceMoney == moneyUsd)
-            {
-                currentEuro = 0.8294;
-                currentRub = 75.8451;
-                currentByn = 2.6251;
-            }
+                if (!double.TryParse(Console.ReadLine(), out digit2)) //проверка парсинга в double 2-го значения
+                {
+                    Console.WriteLine(errorMessage);
 
-            if ((sourceMoney == moneyUsd) &&(targetMoney == moneyByn))
-            {
-                Outcome(sum, currentByn, targetMoney);
-            }
-            else if ((sourceMoney == moneyUsd) && (targetMoney == moneyEuro))
-            {
-                Outcome(sum, currentEuro, targetMoney);
-            }
-            else if ((sourceMoney == moneyUsd) && (targetMoney == moneyRub))
-            {
-                Outcome(sum, currentRub, targetMoney);
-            }
+                    if (exit = ExitProg(exitMessage))
+                    {
+                        Console.Clear();
+                        continue;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
 
+                Console.Write("Введите симмвол вычисления (+,-,/,*,%): ");
 
-            if (sourceMoney == moneyByn)
-            {
-                currentEuro = 0.316;
-                currentRub = 28.8934;
-                currentUsd = 0.381;
-            }
+                if (char.TryParse(Console.ReadLine(), out calcSymbol)) // проверка парсинга в char символа вычисления
+                {
+                    if ((calcSymbol != '+') && (calcSymbol != '/') && (calcSymbol != '*') && (calcSymbol != '-') && (calcSymbol != '%')) //проверка на соответствие символам вычисления
+                    {
+                        Console.WriteLine(errorMessage);
 
-            if ((sourceMoney == moneyByn) && (targetMoney == moneyUsd))
-            {
-                Outcome(sum, currentUsd, targetMoney);
-            }
-            else if ((sourceMoney == moneyByn) && (targetMoney == moneyEuro))
-            {
-                Outcome(sum, currentEuro, targetMoney);
-            }
-            else if ((sourceMoney == moneyByn) && (targetMoney == moneyRub))
-            {
-                Outcome(sum, currentRub, targetMoney);
-            }
+                        if (exit = ExitProg(exitMessage))
+                        {
+                            Console.Clear();
+                            continue;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
 
+                switch (calcSymbol) // вычисление значений
+                {
+                    case '+':
+                        outcome = digit1 + digit2;
+                        break;
 
-            if (sourceMoney == moneyEuro)
-            {
-                currentByn = 3.165;
-                currentRub = 91.4476;
-                currentUsd = 1.2057;
-            }
+                    case '-':
+                        outcome = digit1 - digit2;
+                        break;
 
-            if ((sourceMoney == moneyEuro) && (targetMoney == moneyUsd))
-            {
-                Outcome(sum, currentUsd, targetMoney);
-            }
-            else if ((sourceMoney == moneyEuro) && (targetMoney == moneyByn))
-            {
-                Outcome(sum, currentByn, targetMoney);
-            }
-            else if ((sourceMoney == moneyEuro) && (targetMoney == moneyRub))
-            {
-                Outcome(sum, currentRub, targetMoney);
-            }
+                    case '/':
+                        if(digit2!=0) // проверка деления на ноль
+                        {
+                            outcome = digit1 / digit2;
+                        }
+                        else
+                        {
+                            Console.WriteLine(errorDivision);
 
+                            if (exit = ExitProg(exitMessage))
+                            {
+                                Console.Clear();
+                                continue;
+                            }
+                            else
+                            {
+                                return;
+                            }
+                        }
+                        break;
 
-            if (sourceMoney == moneyRub)
-            {
-                currentByn = 0.0346;
-                currentEuro = 0.0109;
-                currentUsd = 0.0132;
-            }
+                    case '*':
+                        outcome = digit1 * digit2;
+                        break;
 
-            if ((sourceMoney == moneyRub) && (targetMoney == moneyUsd))
-            {
-                Outcome(sum, currentUsd, targetMoney);
-            }
-            else if ((sourceMoney == moneyRub) && (targetMoney == moneyByn))
-            {
-                Outcome(sum, currentByn, targetMoney);
-            }
-            else if ((sourceMoney == moneyRub) && (targetMoney == moneyEuro))
-            {
-                Outcome(sum, currentEuro, targetMoney);
+                    case '%':
+                        outcome = digit1 % digit2;
+                        break;
+
+                    default:
+                        Console.WriteLine(errorMessage);
+                        break;
+                }
+
+                Console.WriteLine($"{digit1} {calcSymbol} {digit2} = {outcome}");
+
+                if (exit = ExitProg(exitMessage))
+                {
+                    Console.Clear();
+                    continue;
+                }
+                else
+                {
+                    break;
+                }
             }
         }
     }
