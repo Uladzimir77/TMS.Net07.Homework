@@ -8,18 +8,27 @@ namespace TMS.Net07.Homework.Converter_Calculator
 {
     class Program
     { 
+        static int Fact(int dig)
+        {
+            int temp;
+
+            if ((dig == 1) || (dig == 0))
+            {
+                return temp = 1;
+            }
+
+            return temp = dig * Fact(dig - 1);
+        }
         static void Main(string[] args)
         {
-            int fact=1;
-            int dig;
 
-            Console.Write("Введите число: ");
+            int dig;
+            int fact;
+
+            Console.Write("Введите число для расчета факториала: ");
             dig = int.Parse(Console.ReadLine());
 
-            for(int i = 2; i <= dig; ++i)
-            {
-                fact *= i;
-            }
+            fact = Fact(dig);
 
             Console.WriteLine($"Факториал числа {dig} равен {fact}");
         }
