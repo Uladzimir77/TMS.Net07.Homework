@@ -1,0 +1,7 @@
+C:\Users\Uladzimir\Desktop\TMS.Net07.Homework\TMS.Net07.Homework.Geometric_Figures\bin\Debug\TMS.Net07.Homework.Geometric_Figures.exe.config
+C:\Users\Uladzimir\Desktop\TMS.Net07.Homework\TMS.Net07.Homework.Geometric_Figures\bin\Debug\TMS.Net07.Homework.Geometric_Figures.exe
+C:\Users\Uladzimir\Desktop\TMS.Net07.Homework\TMS.Net07.Homework.Geometric_Figures\bin\Debug\TMS.Net07.Homework.Geometric_Figures.pdb
+C:\Users\Uladzimir\Desktop\TMS.Net07.Homework\TMS.Net07.Homework.Geometric_Figures\obj\Debug\TMS.Net07.Homework.Geometric_Figures.csprojAssemblyReference.cache
+C:\Users\Uladzimir\Desktop\TMS.Net07.Homework\TMS.Net07.Homework.Geometric_Figures\obj\Debug\TMS.Net07.Homework.Geometric_Figures.csproj.CoreCompileInputs.cache
+C:\Users\Uladzimir\Desktop\TMS.Net07.Homework\TMS.Net07.Homework.Geometric_Figures\obj\Debug\TMS.Net07.Homework.Geometric_Figures.exe
+C:\Users\Uladzimir\Desktop\TMS.Net07.Homework\TMS.Net07.Homework.Geometric_Figures\obj\Debug\TMS.Net07.Homework.Geometric_Figures.pdb
