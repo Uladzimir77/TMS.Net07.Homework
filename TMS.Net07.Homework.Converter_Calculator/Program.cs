@@ -7,30 +7,24 @@ using System.Threading.Tasks;
 namespace TMS.Net07.Homework.Converter_Calculator
 {
     class Program
-    { 
-        static int Fact(int dig)
+    {
+        static int Fibonacci(int fib)
         {
-            int temp;
-
-            if ((dig == 1) || (dig == 0))
+            if (fib < 2)
             {
-                return temp = 1;
+                return fib;
             }
 
-            return temp = dig * Fact(dig - 1);
+            return Fibonacci(fib - 1) + Fibonacci(fib - 2);
         }
         static void Main(string[] args)
         {
+            int fib;
 
-            int dig;
-            int fact;
+            Console.Write("Введите число: ");
+            fib = int.Parse(Console.ReadLine());
 
-            Console.Write("Введите число для расчета факториала: ");
-            dig = int.Parse(Console.ReadLine());
-
-            fact = Fact(dig);
-
-            Console.WriteLine($"Факториал числа {dig} равен {fact}");
+            Console.WriteLine("Число Фибоначчи  равно: " + Fibonacci(fib));
         }
     }
 }
