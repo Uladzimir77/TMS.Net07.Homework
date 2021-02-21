@@ -1,0 +1,7 @@
+C:\Users\Uladzimir\Desktop\TMS.Net07.Homework\TMS.Net07.Homework.Converter_Calculator\bin\Debug\TMS.Net07.Homework.Converter_Calculator.exe.config
+C:\Users\Uladzimir\Desktop\TMS.Net07.Homework\TMS.Net07.Homework.Converter_Calculator\bin\Debug\TMS.Net07.Homework.Converter_Calculator.exe
+C:\Users\Uladzimir\Desktop\TMS.Net07.Homework\TMS.Net07.Homework.Converter_Calculator\bin\Debug\TMS.Net07.Homework.Converter_Calculator.pdb
+C:\Users\Uladzimir\Desktop\TMS.Net07.Homework\TMS.Net07.Homework.Converter_Calculator\obj\Debug\TMS.Net07.Homework.Converter_Calculator.csprojAssemblyReference.cache
+C:\Users\Uladzimir\Desktop\TMS.Net07.Homework\TMS.Net07.Homework.Converter_Calculator\obj\Debug\TMS.Net07.Homework.Converter_Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Uladzimir\Desktop\TMS.Net07.Homework\TMS.Net07.Homework.Converter_Calculator\obj\Debug\TMS.Net07.Homework.Converter_Calculator.exe
+C:\Users\Uladzimir\Desktop\TMS.Net07.Homework\TMS.Net07.Homework.Converter_Calculator\obj\Debug\TMS.Net07.Homework.Converter_Calculator.pdb
